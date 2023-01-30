@@ -1,14 +1,14 @@
 package br.com.ada.cambio.model;
 
+import br.com.ada.cambio.model.enums.EstadoCivil;
+import br.com.ada.cambio.model.enums.Sexo;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
 @Entity
+@Data
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,11 @@ public class Cliente {
     @Column(unique = true)
     private String cpf;
     private LocalDate dataNascimento;
-    private String estadoCivil;
-    private String sexo;
+    private EstadoCivil estadoCivil;
+    private Sexo sexo;
 
+    public Cliente(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
 }
