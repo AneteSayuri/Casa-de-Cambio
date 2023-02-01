@@ -8,16 +8,12 @@ import lombok.Data;
 import java.time.LocalDate;
 @Data
 public class ClienteDTO {
-    private String nome;
-    private String cpf;
+    private final String cpf;
+    private final String nome;
     private LocalDate dataNascimento;
     private EstadoCivil estadoCivil;
     private Sexo sexo;
 
-    public ClienteDTO(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
 
     public static ClienteDTO of(Cliente cliente) {
         ClienteDTO clienteDTO = new ClienteDTO(cliente.getCpf(), cliente.getNome());
@@ -28,8 +24,12 @@ public class ClienteDTO {
     }
 
     public Cliente toEntity() {
-        Cliente clienteEntity = new Cliente(cpf, nome);
+        Cliente clienteEntity = new Cliente();
+        clienteEntity.setNome(nome);
+        clienteEntity.setCpf(cpf);
         clienteEntity.setDataNascimento(dataNascimento);
+        clienteEntity.setEstadoCivil(estadoCivil);
+        clienteEntity.setSexo(sexo);
         return clienteEntity;
     }
 

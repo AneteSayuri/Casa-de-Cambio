@@ -3,9 +3,11 @@ package br.com.ada.cambio.service;
 import br.com.ada.cambio.model.Cliente;
 import br.com.ada.cambio.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -20,7 +22,7 @@ public class ClienteService{
         return clienteRepository.findById(id).orElseThrow(() -> new IllegalArgumentException());
     }
 
-    public Cliente findByCpf(String cpf) {
+    public Optional<Cliente> findByCpf(String cpf) {
         return clienteRepository.findByCpf(cpf);
     }
 

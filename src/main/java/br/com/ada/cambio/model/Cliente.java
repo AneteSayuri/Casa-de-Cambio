@@ -20,8 +20,5 @@ public class Cliente {
     private EstadoCivil estadoCivil;
     private Sexo sexo;
 
-    public Cliente(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
+
 }
