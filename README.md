@@ -33,4 +33,11 @@ This project is an API for generating foreign currency purchase orders for USD (
 ```
 git clone <paste link>
 ```
-
+### Build the project and run it from the terminal
+```
+./mvnw spring-boot:run
+```
+### Build the project and run it from InteliJ
+```
+Click "Run" button in IntelliJ
+```
