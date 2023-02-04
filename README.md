@@ -2,7 +2,7 @@
 
 ## About ❓
 
-This project is an API for generating foreign currency purchase orders for USD (dollar) and EUR (euro). The user must register by providing personal information, such as name, CPF, date of birth, marital status, and gender. The system also includes a customer lookup API by CPF and a currency quotation calculation API, which accesses an external API to obtain current quotations. The API calculates the total purchase value from the currency quotation multiplied by the desired purchase value. In case of success, a request body with relevant information will be returned.
+This project is an API for generating foreign currency purchase orders for USD (dollar) and EUR (euro). The user must register by providing personal information, such as name, CPF, date of birth, marital status, and gender. The system also includes a customer lookup API by CPF and a currency quotation calculation API, which accesses an external API to obtain current quotations. The API calculates the total purchase value from the currency quotation multiplied by the desired purchase value. In case of success, a request body with relevant information will be returned.Also, this project was developed using the Scrum methodology, with teams of 3 members. The project was managed using Git, following the GitFlow standard, with a separate branch for each feature and a release branch for each Sprint.
 
 ## Skills Developed 🧠
 
@@ -41,3 +41,11 @@ git clone <paste link>
 ```
 Click "Run" button in IntelliJ
 ```
+
+## Authors 👩‍💻
+<ul>
+<li> <a href="https://github.com/FriendlyCheesecake"> Amanda Imu; </a> </li>
+<li> <a href="https://github.com/AneteSayuri"> Anete Sayuri; </a> </li>
+<li> <a href="https://github.com/mariaLauraDev"> Maria Laura. </a> </li>
+
+</ul>
