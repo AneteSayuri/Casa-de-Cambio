@@ -1,11 +1,7 @@
-package com.example.compra;
+package com.ada.compra;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class OrdemDeCompraService {

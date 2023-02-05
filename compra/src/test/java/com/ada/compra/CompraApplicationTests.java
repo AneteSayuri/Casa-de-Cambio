@@ -1,4 +1,4 @@
-package com.example.compra;
+package com.ada.compra;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

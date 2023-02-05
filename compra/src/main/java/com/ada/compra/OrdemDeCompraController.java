@@ -1,4 +1,4 @@
-package com.example.compra;
+package com.ada.compra;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

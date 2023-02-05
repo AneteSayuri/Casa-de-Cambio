@@ -1,6 +1,6 @@
-package com.example.compra;
+package com.ada.compra;
 
-import com.example.compra.enums.Moeda;
+import com.ada.compra.enums.Moeda;
 import jakarta.persistence.*;
 import lombok.Data;
 
