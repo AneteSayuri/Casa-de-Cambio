@@ -11,6 +11,7 @@
         <module name="cliente" />
         <module name="cotacao" />
         <module name="casaDeCambio" />
+        <module name="comum" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +23,7 @@
       <module name="casaDeCambio" options="-parameters" />
       <module name="cliente" options="-parameters" />
       <module name="compra" options="-parameters" />
+      <module name="comum" options="" />
       <module name="cotacao" options="-parameters" />
     </option>
   </component>
