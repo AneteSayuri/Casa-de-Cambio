@@ -21,7 +21,7 @@
       <module name="cliente" options="-parameters" />
       <module name="compra" options="-parameters" />
       <module name="comum" options="" />
-      <module name="cotacao" options="-parameters" />
+      <module name="cotacao" options="" />
     </option>
   </component>
 </project>
