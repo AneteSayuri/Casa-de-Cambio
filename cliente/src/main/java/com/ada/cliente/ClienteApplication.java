@@ -1,4 +1,4 @@
-package com.example.cliente;
+package com.ada.cliente;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
