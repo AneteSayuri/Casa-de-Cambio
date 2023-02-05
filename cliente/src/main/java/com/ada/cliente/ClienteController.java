@@ -1,5 +1,6 @@
 package com.ada.cliente;
 
+import com.ada.comum.EntidadeDuplicadaException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,10 +44,11 @@ public class ClienteController {
 
         try {
             service.salvar(clienteDTO.toEntity());
+        } catch (EntidadeDuplicadaException e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe uma pessoa com o CPF informado");
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocorreu um erro desconhecido");
         }
-
         return ResponseEntity.created(URI.create("/cliente/" + clearCpf)).build();
     }
 
