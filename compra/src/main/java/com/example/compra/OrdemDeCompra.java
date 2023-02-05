@@ -2,14 +2,12 @@ package com.example.compra;
 
 import com.example.compra.enums.Moeda;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class OrdemDeCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
