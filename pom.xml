@@ -11,9 +11,13 @@
 	<groupId>br.com.ada</groupId>
 	<artifactId>cambio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cambio</name>
+    <packaging>pom</packaging>
+    <name>cambio</name>
 	<description>Projeto de casa de cambio</description>
-	<properties>
+    <modules>
+        <module>Cotacao</module>
+    </modules>
+    <properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
