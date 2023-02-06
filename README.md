@@ -4,6 +4,12 @@
 
 This project is an API for generating foreign currency purchase orders for USD (dollar) and EUR (euro). The user must register by providing personal information, such as name, CPF, date of birth, marital status, and gender. The system also includes a customer lookup API by CPF and a currency quotation calculation API, which accesses an external API to obtain current quotations. The API calculates the total purchase value from the currency quotation multiplied by the desired purchase value. In case of success, a request body with relevant information will be returned. Also, this project was developed using the Scrum methodology, with team of 3 members. The project was managed using Git, following the GitFlow standard, with a separate branch for each feature and a release branch for each Sprint.
 
+ ## Sprint ceremonies report 🧙‍♀️
+
+Our ceremony report consists of the screenshots of our boards in Trello, as well as the planned and achieved goals in each project sprint completion. It can be checked in the following link:
+
+#### <a target="_blank" href= "https://shadowed-animantarx-e77.notion.site/Relat-rio-de-Cerim-nias-f4e6db61d5a8467ea8ac1780ccf79938"> 🧙‍♀️ Ceremony reports</a> 
+
 ## Skills Developed 🧠
 
 <ul>
@@ -24,12 +30,6 @@ This project is an API for generating foreign currency purchase orders for USD (
    <li> SDK 17.0.5; </li>
    <li> Maven. </li>
  </ul>
- 
- ## Sprint ceremonies report 🧙‍♀️
-
-Our ceremony report consists of the screenshots of our boards in Trello, as well as the planned and achieved goals in each project sprint completion. It can be checked in the following link:
-
-#### <a target="_blank" href= "https://shadowed-animantarx-e77.notion.site/Relat-rio-de-Cerim-nias-f4e6db61d5a8467ea8ac1780ccf79938"> 🧙‍♀️ Ceremony reports</a> 
 
 ## How to run the project 👀
 
