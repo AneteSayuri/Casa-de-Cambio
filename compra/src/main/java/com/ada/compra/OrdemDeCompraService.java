@@ -17,6 +17,9 @@ public class OrdemDeCompraService {
     }
 
     public void criarOrdemDeCompra(OrdemDeCompra entity) { //throws EntidadeDuplicadaException, OrdenDeCompraInvalidaException
+//        if (repository.existsById(entity.getId())) {
+//            throw new EntidadeDuplicadaException();
+//        }
         /**
          * Para criar a Ordem de Compra, precisa:
          * - Confirmar que o cliente existe (consultar a API Cliente)
@@ -24,6 +27,7 @@ public class OrdemDeCompraService {
          * - Confirmar se q auantia é válida (>0 e usando .)
          * ? Confirmar se a agencia é válida (Regex)
          */
+
 
     //getCotacao -> cotacaoDTO
     //CONSERTAR ESTA LÓGICA ASAP (Amanda)

@@ -12,6 +12,8 @@ public class OrdemDeCompraDTO {
     private String cliente;
     private Moeda moeda;
     private BigDecimal quantiaEstrangeira;
+    private BigDecimal valorCotação;
+    private BigDecimal valorTotalOperação;
     private String numeroAgencia;
 
     public static OrdemDeCompraDTO of(OrdemDeCompra ordemDeCompra) {
@@ -21,6 +23,8 @@ public class OrdemDeCompraDTO {
         dto.setMoeda(ordemDeCompra.getMoeda());
         dto.setQuantiaEstrangeira(ordemDeCompra.getQuantiaEstrangeira());
         dto.setNumeroAgencia(ordemDeCompra.getNumeroAgencia());
+        dto.setValorCotação(ordemDeCompra.getValorCotação());
+        dto.setValorTotalOperação(ordemDeCompra.getValorTotalOperação());
         return dto;
     }
 
@@ -31,6 +35,8 @@ public class OrdemDeCompraDTO {
         entity.setMoeda(moeda);
         entity.setQuantiaEstrangeira(quantiaEstrangeira);
         entity.setNumeroAgencia(numeroAgencia);
+        entity.setValorCotação(valorCotação);
+        entity.setValorTotalOperação(valorTotalOperação);
         return entity;
     }
 }

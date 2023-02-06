@@ -15,5 +15,7 @@ public class OrdemDeCompra {
     private String cliente;
     private Moeda moeda;
     private BigDecimal quantiaEstrangeira;
+    private BigDecimal valorCotação;
+    private BigDecimal valorTotalOperação;
     private String numeroAgencia;
 }
