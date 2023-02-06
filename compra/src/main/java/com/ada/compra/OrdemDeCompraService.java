@@ -1,19 +1,16 @@
 package com.ada.compra;
 
-import com.ada.cotacao.CotacaoDTO;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class OrdemDeCompraService {
     private final CrudRepository<OrdemDeCompra, Long> repository;
-    private final CotacaoAPI cotacaoAPI;
+    private final CotacaoAPIClient cotacaoAPIClient;
 
-    public OrdemDeCompraService(CrudRepository<OrdemDeCompra, Long> repository, CotacaoAPI cotacaoAPI) {
+    public OrdemDeCompraService(CrudRepository<OrdemDeCompra, Long> repository, CotacaoAPIClient cotacaoAPIClient) {
         this.repository = repository;
-        this.cotacaoAPI = cotacaoAPI;
+        this.cotacaoAPIClient = cotacaoAPIClient;
     }
 
     public void criarOrdemDeCompra(OrdemDeCompra entity) { //throws EntidadeDuplicadaException, OrdenDeCompraInvalidaException

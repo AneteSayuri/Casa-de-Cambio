@@ -7,12 +7,12 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
-public class CotacaoAPI {
+public class CotacaoAPIClient {
     private final RestTemplate restTemplate;
     private final WebClient webClient;
     private String URI = "http://localhost:8083/cotacao/";
 
-    public CotacaoAPI(RestTemplateBuilder restTemplateBuilder, WebClient.Builder webClientBuilder) {
+    public CotacaoAPIClient(RestTemplateBuilder restTemplateBuilder, WebClient.Builder webClientBuilder) {
         this.restTemplate = restTemplateBuilder.build();
         this.webClient = webClientBuilder.baseUrl(URI).build();
     }
