@@ -20,6 +20,5 @@ public class CotacaoDTO {
         this.code = code;
         this.ask = ask;
         this.create_date = create_date;
-
     }
 }
