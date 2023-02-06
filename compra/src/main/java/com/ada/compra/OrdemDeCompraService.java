@@ -9,7 +9,7 @@ public class OrdemDeCompraService {
     private final CotacaoAPIClient cotacaoAPIClient;
     private final ClienteAPIClient clienteAPIClient;
 
-    public OrdemDeCompraService(CrudRepository<OrdemDeCompra, Long> repository, CotacaoAPIClient cotacaoAPIClient, ClienteAPIClient clienteAPICliente) {
+    public OrdemDeCompraService(CrudRepository<OrdemDeCompra, Long> repository, CotacaoAPIClient cotacaoAPIClient, ClienteAPIClient clienteAPIClient) {
         this.repository = repository;
         this.cotacaoAPIClient = cotacaoAPIClient;
         this.clienteAPIClient = clienteAPIClient;
@@ -36,9 +36,6 @@ public class OrdemDeCompraService {
 
             return ordemDeCompra;
         }*/
-
-
-
     }
 }
 
