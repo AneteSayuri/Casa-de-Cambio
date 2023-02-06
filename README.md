@@ -25,6 +25,11 @@ This project is an API for generating foreign currency purchase orders for USD (
    <li> Maven. </li>
  </ul>
  
+ ## Sprint ceremonies report
+
+Our ceremony report consists of the screenshots of our boards in Trello, as well as the planned and achieved goals in each project sprint completion. It can be checked in the following link:
+
+#### <a target="_blank" href= "https://shadowed-animantarx-e77.notion.site/Relat-rio-de-Cerim-nias-f4e6db61d5a8467ea8ac1780ccf79938"> Ceremony reports</a> 
 
 ## How to run the project 👀
 
