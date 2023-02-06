@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 public class OrdemDeCompraService {
     private final CrudRepository<OrdemDeCompra, Long> repository;
     private final CotacaoAPIClient cotacaoAPIClient;
+    private final ClienteAPIClient clienteAPIClient;
 
-    public OrdemDeCompraService(CrudRepository<OrdemDeCompra, Long> repository, CotacaoAPIClient cotacaoAPIClient) {
+    public OrdemDeCompraService(CrudRepository<OrdemDeCompra, Long> repository, CotacaoAPIClient cotacaoAPIClient, ClienteAPIClient clienteAPICliente) {
         this.repository = repository;
         this.cotacaoAPIClient = cotacaoAPIClient;
+        this.clienteAPIClient = clienteAPIClient;
     }
 
     public void criarOrdemDeCompra(OrdemDeCompra entity) { //throws EntidadeDuplicadaException, OrdenDeCompraInvalidaException
