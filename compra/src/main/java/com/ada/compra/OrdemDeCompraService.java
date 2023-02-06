@@ -15,7 +15,7 @@ public class OrdemDeCompraService {
         this.clienteAPIClient = clienteAPIClient;
     }
 
-    public void criarOrdemDeCompra(OrdemDeCompra entity) { //throws EntidadeDuplicadaException, OrdenDeCompraInvalidaException
+    public void criarOrdemDeCompra(OrdemDeCompra entity) { //throws EntidadeDuplicadaException, OrdemDeCompraInvalidaException
         /**
          * Para criar a Ordem de Compra, precisa:
          * - Confirmar que o cliente existe (consultar a API Cliente)
@@ -24,18 +24,17 @@ public class OrdemDeCompraService {
          * ? Confirmar se a agencia é válida (Regex)
          */
 
-    //getCotacao -> cotacaoDTO
-    //CONSERTAR ESTA LÓGICA ASAP (Amanda)
-    /*public OrdemDeCompra obterCotacao(OrdemDeCompra entity) {
-            if(getMoeda = EUR...)
-            CotacaoDTO cotacao = new CotacaoDTO().getCotacao(OrdemDeCompra.getMoeda().toString());
-
-            ordemDeCompra.setValorCotação(cotacaoDTO.getAsk())
-            ordemCompra.setValorTotalOperação(cotacaoDTO.getAsk() * ordemDeCompra.getQuantiaEstrangeira());
-            ordemCompra.setDataSolicitacao(cotacaoDTO.getCreate_date);
-
-            return ordemDeCompra;
-        }*/
+        //getCotacao -> cotacaoDTO
+        //CONSERTAR ESTA LÓGICA ASAP (Amanda)
+//    public OrdemDeCompra obterCotacao(OrdemDeCompra entity) {
+//            CotacaoDTO cotacao = new CotacaoDTO().getCotacao(OrdemDeCompra.getMoeda().toString());
+//            ordemDeCompra.setValorCotação(cotacaoDTO.getAsk())
+//            ordemCompra.setValorTotalOperação(cotacaoDTO.getAsk() * ordemDeCompra.getQuantiaEstrangeira());
+//            ordemCompra.setDataSolicitacao(cotacaoDTO.getCreate_date);
+//            return ordemDeCompra;
+//        }
+//    }
     }
+
 }
 

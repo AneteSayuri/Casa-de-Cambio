@@ -1,4 +1,4 @@
 package com.ada.comum;
+public class EntidadeDuplicadaException extends Throwable {
 
-public class EntidadeDuplicadaException extends Throwable{
 }
