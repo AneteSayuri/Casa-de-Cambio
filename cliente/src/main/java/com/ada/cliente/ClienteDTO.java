@@ -6,8 +6,9 @@ import java.time.LocalDate;
 
 @Data
 public class ClienteDTO {
-    private String cpf;
+    private Long id;
     private String nome;
+    private String cpf;
     private LocalDate dataNascimento;
     private EstadoCivil estadoCivil;
     private Sexo sexo;
@@ -15,8 +16,9 @@ public class ClienteDTO {
 
     public static ClienteDTO of(Cliente cliente) {
         ClienteDTO clienteDTO = new ClienteDTO();
-        clienteDTO.cpf = cliente.getCpf();
+        clienteDTO.id = cliente.getId();
         clienteDTO.nome = cliente.getNome();
+        clienteDTO.cpf = cliente.getCpf();
         clienteDTO.dataNascimento = cliente.getDataNascimento();
         clienteDTO.estadoCivil = cliente.getEstadoCivil();
         clienteDTO.sexo = cliente.getSexo();
@@ -25,6 +27,7 @@ public class ClienteDTO {
 
     public Cliente toEntity() {
         Cliente clienteEntity = new Cliente();
+        clienteEntity.setId(id);
         clienteEntity.setNome(nome);
         clienteEntity.setCpf(cpf);
         clienteEntity.setDataNascimento(dataNascimento);

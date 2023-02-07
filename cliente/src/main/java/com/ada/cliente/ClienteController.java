@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -50,6 +51,11 @@ public class ClienteController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocorreu um erro desconhecido");
         }
         return ResponseEntity.created(URI.create("/cliente/" + clearCpf)).build();
+    }
+
+    @GetMapping
+    public List<Cliente> buscar(){
+        return service.findAll();
     }
 
 }
