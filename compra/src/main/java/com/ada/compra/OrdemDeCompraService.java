@@ -28,11 +28,7 @@ public class OrdemDeCompraService {
         this.clienteAPIClient = clienteAPIClient;
     }
 
-    public Optional<OrdemDeCompra> getById(Long id) {
-        return repository.findById(id);
-    }
-
-    public OrdemDeCompra criarOrdemDeCompra(OrdemDeCompra entity) throws EntidadeDuplicadaException, ClienteInvalidoException, MoedaInvalidaException, AgenciaInvalidaException, ValorInvalidoException {
+    public void criarOrdemDeCompra(OrdemDeCompra entity) throws EntidadeDuplicadaException, ClienteInvalidoException, MoedaInvalidaException, AgenciaInvalidaException, ValorInvalidoException {
         if (repository.existsById(entity.getId_compra())) {
             throw new EntidadeDuplicadaException();
         }
@@ -57,7 +53,6 @@ public class OrdemDeCompraService {
             throw new AgenciaInvalidaException("A agência deve ter 4 dígitos");
         }
         repository.save(entity);
-        return entity;
     }
     public OrdemDeCompra obterCotacao(OrdemDeCompra entity) {
             CotacaoDTO cotacaoDTO = cotacaoAPIClient.getCotacao(entity.getTipo_moeda().toString());
