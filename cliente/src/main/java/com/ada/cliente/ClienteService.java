@@ -14,9 +14,12 @@ public class ClienteService {
     private final ClienteRepository clienteRepository;
 
     public Cliente salvar(Cliente cliente) throws EntidadeDuplicadaException {
-        if (clienteRepository.existsById(cliente.getId())) {
+        Optional<Cliente> clienteEncontrado = findByCpf(cliente.getCpf());
+        if (clienteEncontrado.isPresent()) {
             throw new EntidadeDuplicadaException();
         }
+        String clearCpf = cliente.getCpf().replaceAll("[\\.-]", "");
+        cliente.setCpf(clearCpf);
         return clienteRepository.save(cliente);
     }
 
