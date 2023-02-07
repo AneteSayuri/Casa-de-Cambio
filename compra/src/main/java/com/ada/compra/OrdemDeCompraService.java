@@ -1,5 +1,6 @@
 package com.ada.compra;
 
+import com.ada.cliente.Cliente;
 import com.ada.compra.exceptions.AgenciaInvalidaException;
 import com.ada.compra.exceptions.ClienteInvalidoException;
 import com.ada.compra.exceptions.MoedaInvalidaException;
@@ -10,6 +11,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import static java.math.BigDecimal.ZERO;
@@ -30,7 +32,7 @@ public class OrdemDeCompraService {
         return repository.findById(id);
     }
 
-    public void criarOrdemDeCompra(OrdemDeCompra entity) throws EntidadeDuplicadaException, ClienteInvalidoException, MoedaInvalidaException, AgenciaInvalidaException, ValorInvalidoException {
+    public OrdemDeCompra criarOrdemDeCompra(OrdemDeCompra entity) throws EntidadeDuplicadaException, ClienteInvalidoException, MoedaInvalidaException, AgenciaInvalidaException, ValorInvalidoException {
         if (repository.existsById(entity.getId_compra())) {
             throw new EntidadeDuplicadaException();
         }
@@ -55,6 +57,7 @@ public class OrdemDeCompraService {
             throw new AgenciaInvalidaException("A agência deve ter 4 dígitos");
         }
         repository.save(entity);
+        return entity;
     }
     public OrdemDeCompra obterCotacao(OrdemDeCompra entity) {
             CotacaoDTO cotacaoDTO = cotacaoAPIClient.getCotacao(entity.getTipo_moeda().toString());
@@ -65,5 +68,9 @@ public class OrdemDeCompraService {
             entity.setDataSolicitacao(cotacaoDTO.getCreate_date());
             return entity;
         }
+
+    public List<OrdemDeCompra> findAll() {
+        return (List<OrdemDeCompra>) repository.findAll();
+    }
 }
 
