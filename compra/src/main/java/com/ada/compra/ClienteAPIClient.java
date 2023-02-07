@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class ClienteAPIClient {
     private final RestTemplate restTemplate;
     private final WebClient webClient;
-    private String URI = "http://localhost:8081/";
+    private String URI = "http://localhost:8081/cliente/";
     public ClienteAPIClient(RestTemplateBuilder restTemplateBuilder, WebClient.Builder webClientBuilder) {
         this.restTemplate = restTemplateBuilder.build();
         this.webClient = webClientBuilder.baseUrl(URI).build();
