@@ -1,6 +1,7 @@
 package com.ada.compra;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class CotacaoDTO {
@@ -9,9 +10,9 @@ public class CotacaoDTO {
     //request body = valor_cotacao
     private BigDecimal ask;
     //request body = dataSolicitacao
-    private Date create_date;
+    private LocalDate create_date;
 
-    public CotacaoDTO(String code, BigDecimal ask, Date create_date){
+    public CotacaoDTO(String code, BigDecimal ask, LocalDate create_date){
         this.code = code;
         this.ask = ask;
         this.create_date = create_date;

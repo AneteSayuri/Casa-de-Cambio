@@ -14,4 +14,8 @@ public class ClienteAPIClient {
         this.restTemplate = restTemplateBuilder.build();
         this.webClient = webClientBuilder.baseUrl(URI).build();
     }
+    public boolean existeCliente(String id) {
+        String url = URI + id;
+        return restTemplate.getForEntity(url, String.class).getStatusCode().is2xxSuccessful();
+    }
 }
