@@ -1,15 +1,16 @@
 package com.ada.compra;
 
 import com.ada.cliente.Cliente;
-import com.ada.compra.exceptions.AgenciaInvalidaException;
-import com.ada.compra.exceptions.ClienteInvalidoException;
-import com.ada.compra.exceptions.MoedaInvalidaException;
-import com.ada.compra.exceptions.ValorInvalidoException;
+import com.ada.cliente.ClienteDTO;
+import com.ada.compra.exceptions.*;
 import com.ada.comum.EntidadeDuplicadaException;
 import com.ada.cotacao.CotacaoDTO;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,7 @@ public class OrdemDeCompraService {
         this.clienteAPIClient = clienteAPIClient;
     }
 
-    public void criarOrdemDeCompra(OrdemDeCompra entity) throws EntidadeDuplicadaException, ClienteInvalidoException, MoedaInvalidaException, AgenciaInvalidaException, ValorInvalidoException {
+    public void criarOrdemDeCompra(OrdemDeCompra entity) throws EntidadeDuplicadaException, ClienteInvalidoException, MoedaInvalidaException, AgenciaInvalidaException, ValorInvalidoException, InvalidRegistrationException {
         if (repository.existsById(entity.getId_compra())) {
             throw new EntidadeDuplicadaException();
         }
@@ -52,6 +53,10 @@ public class OrdemDeCompraService {
         if (!agencia.matches("\\d{4}")) {
             throw new AgenciaInvalidaException("A agência deve ter 4 dígitos");
         }
+
+        ClienteDTO cliente = clienteAPIClient.obterCliente(entity.getCpf_cliente());
+        entity = obterCotacao(entity);
+        entity.setId_cliente(cliente.getId());
         repository.save(entity);
     }
     public OrdemDeCompra obterCotacao(OrdemDeCompra entity) {
