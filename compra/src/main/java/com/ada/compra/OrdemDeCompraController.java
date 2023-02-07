@@ -26,7 +26,7 @@ public class OrdemDeCompraController {
         if (ordemDeCompra == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informada uma ordem de compra válida");
         }
-        if (ordemDeCompra.getId_cliente() == null) {
+        if (ordemDeCompra.getCpf_cliente() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informada uma ordem de compra com um cpf atrelado válido.");
         }
         if (ordemDeCompra.getTipo_moeda()== null) {
