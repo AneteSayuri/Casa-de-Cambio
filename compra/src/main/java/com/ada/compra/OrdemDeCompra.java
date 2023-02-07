@@ -21,4 +21,5 @@ public class OrdemDeCompra {
     private BigDecimal valor_cotacao;
     private BigDecimal valor_total_operacao;
     private String numero_agencia_retirada;
+
 }
