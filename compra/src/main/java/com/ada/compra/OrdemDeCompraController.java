@@ -13,15 +13,10 @@ import java.net.URI;
 @RequestMapping("/api/ordem-de-compra")
 public class OrdemDeCompraController {
     private final OrdemDeCompraService ordemDeCompraService;
+
     @PostMapping
-    public ResponseEntity<Void> add(@RequestBody OrdemDeCompraDTO ordemDeCompra) {
-        if (ordemDeCompra == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informada uma ordem de compra válida");
-        }
-        if (ordemDeCompra.getCliente() == null || ordemDeCompra.getCliente().isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informada uma reserva com uma cliente válido");
-        }
-        return ResponseEntity.created(URI.create("/api/ordem-de-compra/" + ordemDeCompra.getId())).build();
+    public ResponseEntity<Void> add(@RequestBody OrdemDeCompraDTO ordemDeCompraDTO) {
+        return ResponseEntity.created(URI.create("/api/ordem-de-compra/" + ordemDeCompraDTO.getId_compra())).build();
     }
 
 }
