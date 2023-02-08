@@ -1,6 +1,4 @@
 package com.ada.compra;
-
-import com.ada.cliente.Cliente;
 import com.ada.cliente.ClienteDTO;
 import com.ada.compra.exceptions.*;
 import com.ada.comum.EntidadeDuplicadaException;
@@ -8,12 +6,8 @@ import com.ada.cotacao.CotacaoDTO;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
-
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
 import static java.math.BigDecimal.ZERO;
 
