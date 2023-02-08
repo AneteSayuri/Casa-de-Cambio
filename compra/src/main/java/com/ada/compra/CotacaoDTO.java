@@ -1,9 +1,10 @@
 package com.ada.compra;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
-
+@Data
 public class CotacaoDTO {
     //request body = tipo_moeda
     private String code;
@@ -16,5 +17,8 @@ public class CotacaoDTO {
         this.code = code;
         this.ask = ask;
         this.create_date = create_date;
+    }
+
+    public CotacaoDTO() {
     }
 }
