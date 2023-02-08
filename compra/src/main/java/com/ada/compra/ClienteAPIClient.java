@@ -10,8 +10,8 @@ import reactor.core.publisher.Mono;
 @Component
 
 public class ClienteAPIClient {
-    private final RestTemplate restTemplate;
-    private final WebClient webClient;
+    private RestTemplate restTemplate;
+    private WebClient webClient;
     private String URI = "http://localhost:8081/cliente/";
     public ClienteAPIClient(RestTemplateBuilder restTemplateBuilder, WebClient.Builder webClientBuilder) {
         this.restTemplate = restTemplateBuilder.build();
@@ -22,8 +22,10 @@ public class ClienteAPIClient {
         return restTemplate.getForEntity(url, String.class).getStatusCode().is2xxSuccessful();
     }
     public ClienteDTO obterCliente(String cpf) {
-        URI += cpf;
-        Mono<ClienteDTO> registration = webClient.get().uri(URI)
+        String clienteAPI = "http://localhost:8081/cliente/";
+        //NÃO DEIXAR O CAMINHO COMO FINAL, pois não funciona na segunda chamada em diante.
+        clienteAPI += cpf;
+        Mono<ClienteDTO> registration = webClient.get().uri(clienteAPI)
                 .retrieve().bodyToMono(ClienteDTO.class);
         return registration.block();
     }
