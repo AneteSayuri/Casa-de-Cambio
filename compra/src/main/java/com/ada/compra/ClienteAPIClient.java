@@ -1,7 +1,7 @@
 package com.ada.compra;
 
 import com.ada.cliente.ClienteDTO;
-import lombok.RequiredArgsConstructor;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -21,7 +21,6 @@ public class ClienteAPIClient {
         String url = URI + id;
         return restTemplate.getForEntity(url, String.class).getStatusCode().is2xxSuccessful();
     }
-
     public ClienteDTO obterCliente(String cpf) {
         URI += cpf;
         Mono<ClienteDTO> registration = webClient.get().uri(URI)
